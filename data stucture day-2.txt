@@ -1,0 +1,158 @@
+1)# single linked list nord
+# here position starts from o
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=none
+        
+        
+class singlelinkedlist:
+    def __init__(self):
+        self.head=none
+        
+    def insert_position(self,pos,data):
+        np=node(data)
+        temp=self.head
+    for i in range(pos-1):
+        temp=temp.next
+        np.next=temp.next
+        temp.next=np
+        
+    def display(self):
+        if self.head is none:
+            print("linked list is empty")
+        else:
+            temp=self.head
+            while temp:
+                print(temp.data,"--->",end="  ")
+                      temp=temp.next
+obj=singlelinkedlist()
+n=node(10)
+obj.head=n
+n1=node(20)
+n.next=n1                  
+n2=node(30)
+n1.next=n2
+n3=node(40)
+n2.next=n3
+n4=node(50)
+n3.next=n4
+obj.display()
+print()
+obj.insert_position(2,1000)   
+obj.display()            
+
+output:
+10 ==>> 20 ==>> 30 ==>> 40 ==>> 50 ==>> 
+10 ==>> 20 ==>> 1000 ==>> 30 ==>> 40==>> 50==>> 
+
+
+
+
+
+2)# single linked list delete
+# here position starts from o
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class singlelinkedlist:
+    def __init__(self):
+        self.head=None
+    
+    def delete_position(self,pos):
+        temp=self.head.next
+        prev=self.head
+        for i in range(1,pos-1):
+            temp=temp.next
+            prev=prev.next
+        prev.next=temp.next
+        temp.next=None
+
+    def display(self):
+        if self.head is None:
+            print("linked list is empty")
+        else:
+            temp=self.head
+            while temp:
+                print(temp.data,"==>>",end=" ")
+                temp=temp.next
+obj=singlelinkedlist()
+n=Node(10)
+obj.head=n
+n1=Node(20)
+n.next=n1
+n2=Node(30)
+n1.next=n2
+n3=Node(40)
+n2.next=n3
+n4=Node(50)
+n3.next=n4
+obj.display()
+print()
+obj.delete_position(3)
+obj.display()
+
+output:
+10 ==>> 20 ==>> 30 ==>> 40 ==>> 50 ==>> 
+10 ==>> 20 ==>> 40 ==>> 50 ==>> 
+
+
+3)import random
+n=random.randrange(1,100)
+guess = int(input("enter the number"))
+while n!=guess:
+    if guess<n:
+        print(" to low")
+        guess=int(input("enter number again:"))
+    elif guess>n:
+        print(" too high")
+        guess = int(input("enter the number"))
+    else:
+        break
+print("you guessed it right!") 
+
+
+output:
+enter the number50
+ too high
+enter the number25
+ to low
+enter number again:35
+ to low
+enter number again:45
+ to low
+enter number again:47
+ too high
+enter the number46
+you guessed it right!  
+
+
+4) # doubly linked list
+class Node:
+  def _init_(self,data):
+    self.data=data
+    self.previous=None
+    self.next=None
+class dll:
+  def _init_(self):
+    self.head=None
+  def display(self):
+    if self.head is None:
+      print("empty")
+    else:
+      temp=self.head
+      while temp:
+        print(temp.data,"<=>",end=" ")
+        temp=temp.next
+l=dll()
+n1=Node(100)
+l.head=n1
+n2=Node(200)
+n2.prev=n1
+n1.next=n2
+l.display()
+
+
+output:
+   100 <=> 200 <=>
